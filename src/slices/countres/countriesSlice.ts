@@ -1,8 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 import { countines } from '../../ts'
+import { getTodos } from '../../helpers/getTodos'
 const initialState : countines = {
     status:"loading",
-    data:[]
+    data:[],
+    todos:[]
 }
 const countriesSlice  = createSlice({
     name: "countries",
@@ -10,10 +12,13 @@ const countriesSlice  = createSlice({
     reducers:{
         getCountries:(state,{payload})=>{
             state.data = [...payload]
-           console.log(payload)
+           
+        },
+        getTodosReduser:(state,{payload})=>{
+            state.todos = payload
         }
     }
 })
 
 export default countriesSlice
-export const {getCountries} = countriesSlice.actions
+export const {getCountries,getTodosReduser} = countriesSlice.actions

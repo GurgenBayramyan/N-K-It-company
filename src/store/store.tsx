@@ -14,7 +14,9 @@ const store = configureStore({
     middleware: [
         ...getDefaultMiddleware({ thunk: false, serializableCheck: false }),
         sagaMiddleware,
-      ]
+    ],
+    devTools: process.env.NODE_ENV !== 'production',
+    
 })
 
 sagaMiddleware.run(RootSaga)
