@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { setCountries, setTodos } from './actionTypes/actionTypes';
 import style from './app.module.scss'
-import { Country } from './ts';
+import { Country, Todos } from './ts';
 function App() {
   const { countries }: any = useSelector(state => state)
   const dispatch = useDispatch();
@@ -26,7 +26,14 @@ function App() {
         )
       })}
       <button onClick={randomClick}>random Countri</button>
-      
+      {countries.todos.length && countries.todos.map((todos:Todos,index:number)=>{
+        return(
+          <div key={todos.id}>
+              <span>{todos.title}</span>
+              <span>{todos.userId}</span>
+          </div>
+        )
+      })}
     </div>
   );
 }

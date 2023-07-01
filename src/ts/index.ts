@@ -1,7 +1,14 @@
+export interface Todos {
+  userId:number,
+  id:number,
+  title:string,
+  completed:boolean
+
+}
 export interface countines {
     status:"loading" | "done"
-    data: any
-    todos:any
+    data: Country[],
+    todos:Todos[]
   }
   export interface Country {
     name: {
