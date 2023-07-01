@@ -16,16 +16,17 @@ function App() {
   return (
     <div className={style.app}>
       <h1>Random Coutries</h1>
-      {data.length && data.map((countri, i: number) => {
+      {data.length && data.map((countri) => {
         return (
-          <div className={style.block} key={i}>
+          <div className={style.block} key={countri.name.common}>
             <span>{countri.name.common}</span>
+
             <img src={countri.flags.png} alt={countri.flags.alt} />
           </div>
         )
       })}
       <button onClick={randomClick}>random Countri</button>
-      {todos.length && todos.map((todos,i:number)=>{
+      {todos.length && todos.map((todos)=>{
         return(
           <div key={todos.id}>
               <span>{todos.title}</span>
