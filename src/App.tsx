@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
 import { setCountries, setTodos } from './actionTypes/actionTypes';
 import style from './app.module.scss'
-import { Country, Todos } from './ts';
+import { useAppDispatch, useAppSelector } from './hooks/hook';
 function App() {
-  const { countries }: any = useSelector(state => state)
-  const dispatch = useDispatch();
+  const { data,todos } = useAppSelector(state => state.countries)
+  const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(setCountries())
     dispatch(setTodos())
@@ -17,7 +16,7 @@ function App() {
   return (
     <div className={style.app}>
       <h1>Random Coutries</h1>
-      {countries.data.length && countries.data.map((countri: Country, i: number) => {
+      {data.length && data.map((countri, i: number) => {
         return (
           <div className={style.block} key={i}>
             <span>{countri.name.common}</span>
@@ -26,7 +25,7 @@ function App() {
         )
       })}
       <button onClick={randomClick}>random Countri</button>
-      {countries.todos.length && countries.todos.map((todos:Todos,index:number)=>{
+      {todos.length && todos.map((todos,i:number)=>{
         return(
           <div key={todos.id}>
               <span>{todos.title}</span>

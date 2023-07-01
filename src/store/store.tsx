@@ -3,6 +3,7 @@ import saga from  'redux-saga'
 import { rootReducer } from "./rootReducer";
 import { all, fork } from 'redux-saga/effects'
 import { watchSetCountries } from "../sagas/getCountsaga/getCountriesSaga";
+import { type } from "os";
 
 function* RootSaga() {
     yield all([fork(watchSetCountries)])
@@ -21,3 +22,6 @@ const store = configureStore({
 
 sagaMiddleware.run(RootSaga)
 export default store
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

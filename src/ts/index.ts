@@ -5,7 +5,7 @@ export interface Todos {
   completed:boolean
 
 }
-export interface countines {
+export interface Countines {
     status:"loading" | "done"
     data: Country[],
     todos:Todos[]
