@@ -4,6 +4,7 @@ import leftIIcon from "../../icons/left-chevron.png";
 import starImg from "../../icons/star.png";
 import contactImg from "../../icons/contact-me.png";
 import rowImage from "../../icons/down.png";
+import Main from "../main/Main";
 export default function Content() {
   return (
     <main className={style.main}>
@@ -55,6 +56,15 @@ export default function Content() {
                     <span>...</span>
                 </div>
             </div>
+        </div>
+        <div className={style.blocks}>
+        <Main  name="todo"/>
+        <Main  name="in progres"/>
+        <Main  name="On hold"/>
+        <Main name="Review" />
+        <Main name="Done" />
+        <Main name="Info" />
+
         </div>
       </div>
     </main>
