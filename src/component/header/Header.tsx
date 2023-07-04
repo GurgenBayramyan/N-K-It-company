@@ -1,56 +1,88 @@
-import React from 'react'
-import style from './Header.module.scss'
-import appImg from '../../icons/app-drawer.png'
-import treloIcon from '../../icons/trello.png'
-import imgDown from '../../icons/down-chevron.png'
-import searchIcon from '../../icons/search.png'
-import bellImg from '../../icons/notification.png'
-import integrator from '../../icons/interrogation.png'
-import theme from '../../icons/mockup.png'
-import userImg from '../../icons/man.png'
+import React, { useState } from "react";
+import AppsIcon from "@mui/icons-material/Apps";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import style from "./Header.module.scss";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import SearchIcon from "@mui/icons-material/Search";
+import Person3Icon from "@mui/icons-material/Person3";
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
+import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
+import MenuIcon from "@mui/icons-material/Menu";
+import { IHeaderState} from "./header";
 export default function Header() {
+    const[headerState,setHeaderState] = useState<IHeaderState>({
+        open:false
+    })
+    const handleOpenMenu = () => {
+        console.log(headerState.open)
+        setHeaderState({...headerState,open:!headerState.open})
+    }
   return (
     <header className={style.header}>
-        <div className={style.header_navbar}>
-            <div className={style.header_navbar_buttonBlock}>
-                <img src={appImg} alt="imgApp" />
-            </div>
-            <div className={style.header_navbar_iconTreloBlock}>
-                <img src={treloIcon} alt="img" />
-                <span>Trello</span>
-            </div>
-            <div className={style.header_navbar_textBlock}>
-                <span>Рабочие пространства</span>
-                <img src={imgDown} alt="img" />
-            </div>
-            <div className={style.header_navbar_textBlock}>
-                <span>Недавние</span>
-                <img src={imgDown} alt="img" />
-            </div>
-            <div className={style.header_navbar_textBlock}>
-                <span> В избранном</span>
-                <img src={imgDown} alt="img" />
-            </div>
-            <div className={style.header_navbar_textBlock}>
-                <span>Шаблоны</span>
-                <img src={imgDown} alt="img" />
-            </div>
-            <div className={style.header_navbar_search}>
-                <span>Создать</span>
-            </div>
+      <div className={style.header_navbar}>
+        <div className={style.header_navbar_buttonBlock}>
+          <AppsIcon sx={{ cursor: "pointer" }} />
         </div>
-        <div className={style.header_search_block}>
-            <div className={style.header_search_block_inputBlock}>
-                <input type="text"  placeholder='Поиск'/>
-                <img className={style.header_search_block_inputBlock_icon} src={searchIcon} alt="search" title='search' />
-            </div>
-            <div className={style.header_search_block_userBlock}>
-                <img src={bellImg} alt="icons" />
-                <img src={integrator} alt="integrator" />
-                <img src={theme} alt="theme" />
-                <img src={userImg} alt="user_img" title='user' />
-            </div>
+        <div className={style.header_navbar_iconTreloBlock}>
+          <span>Trello</span>
         </div>
+        <div className={style.header_navbar_textBlock}>
+          <span>Рабочие пространства</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span>Недавние</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span> В избранном</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span>Шаблоны</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_search}>
+          <span>Создать</span>
+        </div>
+      </div>
+      <MenuIcon onClick={handleOpenMenu} className={style.header_menuIcon} />
+      <div className={headerState.open == true ? style.header_menuBlock : style.header_menuBlockClose}>
+        <div className={style.header_navbar_iconTreloBlock}>
+          <span>Trello</span>
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span>Рабочие пространства</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span>Недавние</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span> В избранном</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_textBlock}>
+          <span>Шаблоны</span>
+          <KeyboardArrowDownIcon sx={{ cursor: "pointer" }} />
+        </div>
+        <div className={style.header_navbar_search}>
+          <span>Создать</span>
+        </div>
+      </div>
+      <div className={style.header_search_block}>
+        <div className={style.header_search_block_inputBlock}>
+          <input type="text" placeholder="Поиск" />
+          <SearchIcon className={style.header_search_block_inputBlock_icon} />
+        </div>
+        <div className={style.header_search_block_userBlock}>
+          <NotificationsIcon sx={{ cursor: "pointer" }} />
+          <ContactSupportIcon sx={{ cursor: "pointer" }} />
+          <DisplaySettingsIcon sx={{ cursor: "pointer" }} />
+          <Person3Icon sx={{ cursor: "pointer" }} />
+        </div>
+      </div>
     </header>
-  )
+  );
 }

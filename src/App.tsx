@@ -1,12 +1,19 @@
-import React from 'react'
-import style from './App.module.scss'
-import Header from './component/header/Header'
-import Content from './component/content/Content'
+import React from "react";
+import style from "./App.module.scss";
+import Header from "./component/header/Header";
+import Content from "./component/content/Content";
+import FormRegistration from "./component/formRegistration/FormRegistration";
+import Login from "./loginPage/Login";
+import { Route, Routes } from "react-router-dom";
+import Home from "./homePage/Home";
 export default function App() {
   return (
     <div className={style.app}>
-        <Header />
-        <Content />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<FormRegistration />} />
+      </Routes>
     </div>
-  )
+  );
 }

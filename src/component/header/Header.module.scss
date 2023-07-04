@@ -1,47 +1,71 @@
 .header {
     background-color: #1d2125;
-    padding: 15px;
+    padding: 7px 15px;
     color: #9fadbc;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid seashell;
-
-    img {
-        width: clamp(25px, 2vw, 150px);
+    z-index: 0;
+    &_menuIcon{
+        display: none !important;
         cursor: pointer;
     }
-
+    &_menuBlock{
+        position: absolute;
+        top: 35px;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 25px;
+        background-color: #1d2836;
+        color: aliceblue;
+        z-index: 2000;
+        gap: 10px;
+        padding: 50px 0;
+        .header_navbar_textBlock{
+            cursor: pointer;
+        }
+        transition: 400ms ease;
+    }
+    &_menuBlockClose{
+        width: 0;
+        height: 0;
+        .header_navbar_iconTreloBlock{
+            display: none;
+        }
+        .header_navbar_textBlock{
+            display: none;
+        }
+        .header_navbar_search{
+            display: none;
+        }
+    }
     &_navbar {
         display: flex;
-        gap: 2vw;
+        gap: 10px;
 
         &_buttonBlock {
             padding: 5px;
-
+            
         }
 
         &_iconTreloBlock {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50px;
         }
 
         &_textBlock {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50px;
             gap: 15px;
             border-radius: 8px;
-
-            img {
-                width: 20px;
-            }
+            padding: 1px 15px;
+            transition: all ease 300ms;
 
             &:hover {
                 background-color: #9fadbc3f;
-
             }
         }
 
@@ -74,27 +98,47 @@
         position: relative;
         align-self: center;
 
+
         &_inputBlock {
             input {
-                padding-top: 5px;
+                padding-top: 8px;
                 padding-bottom: 10px;
-                padding-left: 45px;
+                padding-left: 35px;
+                background-color: #1d2125;
+                color: white;
+                border: 1px solid white;
+                border-radius: 1rem;
             }
 
             &_icon {
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 30px;
-                height: 30px;
+                top: 5px;
+                left: 5px;
                 padding: 2px;
+                cursor: pointer;
             }
         }
 
         &_userBlock {
             display: flex;
             gap: 8px;
-            
         }
     }
+    @media (min-width:1295px) {
+        &_menuBlock{
+            display: none;
+        }
+    }
+    @media (max-width: 1295px) {
+        &_navbar{
+            display: none;
+        }
+        &_menuIcon{
+            display: block !important;
+            color: #9fadbc;
+            margin-right: 15px;
+        }
+        
+    }
+   
 }

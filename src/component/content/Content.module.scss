@@ -2,19 +2,16 @@
     display: flex;
     color: white;
     width: 100%;
-    img {
-        width: 15px;
-        height: 15px;
-        align-self: center;
-        cursor: pointer;
-
-    }
+    position: relative;
+    height: 100vh;
+    z-index: 0;
 
     &_rightBlock {
         width: 25%;
         height: 100vh;
         background-color: #16191c;
         border-right: 1px solid seashell;
+        transition: all ease 800ms;
 
         &_head {
             border-bottom: 1px solid #445353;
@@ -22,6 +19,7 @@
             padding: 5px 15px;
             display: flex;
             justify-content: space-between;
+            padding: 15px 5px;
 
             div {
                 display: flex;
@@ -34,24 +32,29 @@
                 .one {
                     background-color: #ad4d88;
                     color: #16191c;
-
                 }
             }
-
         }
     }
 
     &_content {
         background-color: #16191c;
-        width: 100%;
         overflow-x: scroll;
-        
+        width: 100%;
+        height: 100vh;
+
         &_top {
-            width: 100%;
+            position: absolute;
+            top: 0;
+            width: 75%;
+            opacity: 0.7;
             display: flex;
             justify-content: space-between;
+            padding: 15px 5px;
+
             &_rightBlock {
                 display: flex;
+                width: 550px;
                 justify-content: space-between;
 
                 h3 {
@@ -74,46 +77,97 @@
                     gap: 4px;
 
                     .dosk {
+                        display: flex;
+
                         p {
                             background-color: #dfe1e6;
                             color: #16191c;
-                            padding: 8px 2px;
+                            padding: 3px 20px;
+                            line-height: 140%;
                             cursor: pointer;
                             border-radius: 4px;
                         }
-                    }
 
-                    img {
-                        display: block;
-                        background-color: #dfe1e6;
-                        padding: 10px 2px;
-                        cursor: pointer;
-                        margin-bottom: 3px;
-                        border-radius: 2px;
+                        .img {
+                            font-size: 30px;
+                            cursor: pointer;
+                        }
                     }
-
                 }
-
             }
-            &_leftBlock{
+
+            &_leftBlock {
                 display: flex;
-                gap: 2  vw;
-                &_text{
+                justify-content: space-between;
+                width: 550px;
+
+                &_text {
+                    width: max-content;
                     padding: 4px;
-                }
-                &_users{
+                    line-height: 200%;
+                    display: flex;
+                    padding: 1px 8px;
+                    border-radius: 3px;
+                    gap: 10px;
+                    cursor: pointer;
 
-                }
-                &_shareBlock{
+                    .logo {
+                        font-size: 15px;
+                        align-self: center;
+                    }
 
+                    &:hover {
+                        background-color: #445353;
+                    }
                 }
             }
-
         }
-        .blocks{
+
+        .blocks {
             width: max-content;
+            margin-top: 100px;
             display: flex;
             gap: 5vw;
+
+            div {
+                width: 500px;
+            }
         }
+    }
+
+    &_rightBlockClose {
+        width: 1%;
+        height: 100vh;
+        border-right: 1px solid seashell;
+        background-color: #16191c;
+        position: relative;
+        transition: all ease 800ms;
+
+        .main_rightBlock_head {
+            div {
+                .one,
+                .two {
+                    display: none;
+                }
+            }
+
+            .parent {
+                .right {
+                    position: absolute;
+                    top: 15px;
+                    left: 45%;
+                    font-weight: 800;
+                    background-color: #dfe1e6;
+                    z-index: 100;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        &_rightBlock {
+            width: 100vw;
+        }
+        
     }
 }
