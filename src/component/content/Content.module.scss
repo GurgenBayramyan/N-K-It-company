@@ -39,22 +39,21 @@
     }
 
     &_content {
-        background-color: #16191C;
         overflow-x: scroll;
         width: 100vw;
         height: 100vh;
-        background-color: #16191C;
         flex: 1;
+        background-color: #b6c3277d;
 
         &_top {
             // position: absolute;
             // top: 0;
             width: 100%;
-            opacity: 0.7;
+            opacity: 0.4;
             display: flex;
             justify-content: space-between;
             padding: 15px 5px;
-            background-color: #16191C;
+            background-color: #0e1b28;
             transition: all 1000s ease;
             position: relative;
 
