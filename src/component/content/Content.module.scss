@@ -7,15 +7,16 @@
     z-index: 0;
 
     &_rightBlock {
-        width: 25%;
+
+        width: 400px;
         height: 100vh;
-        background-color: #16191c;
+        background-color: #16191C;
         border-right: 1px solid seashell;
         transition: all ease 800ms;
 
         &_head {
             border-bottom: 1px solid #445353;
-            color: #9fadbc;
+            color: #9FADBC;
             padding: 5px 15px;
             display: flex;
             justify-content: space-between;
@@ -30,27 +31,148 @@
                 }
 
                 .one {
-                    background-color: #ad4d88;
-                    color: #16191c;
+                    background-color: #AD4D88;
+                    color: #16191C;
                 }
             }
         }
     }
 
     &_content {
-        background-color: #16191c;
+        background-color: #16191C;
         overflow-x: scroll;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
+        background-color: #16191C;
+        flex: 1;
 
         &_top {
-            position: absolute;
-            top: 0;
-            width: 75%;
+            // position: absolute;
+            // top: 0;
+            width: 100%;
             opacity: 0.7;
             display: flex;
             justify-content: space-between;
             padding: 15px 5px;
+            background-color: #16191C;
+            transition: all 1000s ease;
+            position: relative;
+
+            &_rightBlock {
+                display: flex;
+                width: 550px;
+                justify-content: space-between;
+
+
+                &_work {
+                    display: flex;
+                    gap: 5px;
+                    padding: 1px 2px;
+                    border-radius: 7px;
+                    cursor: pointer;
+                    transition: all 500ms ease;
+
+                    .icon_group {
+                        align-self: center;
+                    }
+
+                    .icon_star {
+                        align-self: center;
+                    }
+
+                    p {
+                        align-self: center;
+                    }
+
+                    h3 {
+                        padding: 5px;
+                        padding-left: 25px;
+                        font-weight: 800;
+                        align-self: center;
+                    }
+
+                    &:hover {
+                        background-color: #445353;
+                    }
+                }
+
+                &_dosk {
+                    display: flex;
+                    gap: 5px;
+
+                    .dosk {
+                        display: flex;
+
+                        p {
+                            background-color: #DFE1E6;
+                            color: #16191C;
+                            padding: 3px 20px;
+                            line-height: 160%;
+                            cursor: pointer;
+                            border-radius: 4px;
+                        }
+
+                        .img {
+                            font-size: 30px;
+                            cursor: pointer;
+                        }
+
+                        &:hover {
+                            p {
+                                background-color: #EEEEEE
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 1500px) {
+                    display: none !important;
+
+                }
+
+            }
+
+            &_leftBlock {
+                display: flex;
+                justify-content: space-between;
+                width: 550px;
+
+                &_text {
+                    width: max-content;
+                    padding: 4px;
+                    line-height: 200%;
+                    display: flex;
+                    padding: 1px 8px;
+                    border-radius: 3px;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    .logo {
+                        font-size: 15px;
+                        align-self: center;
+                    }
+
+                    &:hover {
+                        background-color: #445353;
+                    }
+                }
+                @media (max-width: 1100px) {
+                    display: none !important;
+
+                }
+            }
+         
+
+        }
+
+        &_topInClose {
+            width: 98%;
+            opacity: 0.7;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 5px;
+            background-color: #16191C;
+            transition: all 800s ease;
 
             &_rightBlock {
                 display: flex;
@@ -80,8 +202,8 @@
                         display: flex;
 
                         p {
-                            background-color: #dfe1e6;
-                            color: #16191c;
+                            background-color: #DFE1E6;
+                            color: #16191C;
                             padding: 3px 20px;
                             line-height: 140%;
                             cursor: pointer;
@@ -139,12 +261,13 @@
         width: 1%;
         height: 100vh;
         border-right: 1px solid seashell;
-        background-color: #16191c;
+        background-color: #16191C;
         position: relative;
         transition: all ease 800ms;
 
         .main_rightBlock_head {
             div {
+
                 .one,
                 .two {
                     display: none;
@@ -157,17 +280,223 @@
                     top: 15px;
                     left: 45%;
                     font-weight: 800;
-                    background-color: #dfe1e6;
+                    background-color: #DFE1E6;
                     z-index: 100;
                 }
             }
         }
     }
 
-    @media (max-width: 1000px) {
-        &_rightBlock {
-            width: 100vw;
+    @media (max-width: 1280px) {
+        &_content {
+
+
+            &_top {
+
+
+                &_rightBlock {
+                    display: flex;
+                    width: 550px;
+                    justify-content: space-between;
+
+                    h3 {
+                        padding: 5px;
+                        padding-left: 25px;
+                        font-weight: 800;
+                    }
+
+                    &_work {
+                        display: flex;
+                        gap: 2vw;
+
+                        p {
+                            align-self: center;
+                        }
+                    }
+
+                    &_dosk {
+                        display: flex;
+                        gap: 4px;
+
+                        .dosk {
+                            display: flex;
+
+                            p {
+                                background-color: #dfe1e6;
+                                color: #16191c;
+                                padding: 3px 20px;
+                                line-height: 140%;
+                                cursor: pointer;
+                                border-radius: 4px;
+                            }
+
+                            .img {
+                                font-size: 30px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                &_leftBlock {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 550px;
+
+                    &_text {
+                        width: max-content;
+                        padding: 4px;
+                        line-height: 200%;
+                        display: flex;
+                        padding: 1px 8px;
+                        border-radius: 3px;
+                        gap: 10px;
+                        cursor: pointer;
+
+                        .logo {
+                            font-size: 15px;
+                            align-self: center;
+                        }
+
+                        &:hover {
+                            background-color: #445353;
+                        }
+                    }
+                }
+            }
         }
-        
+
+        @media (max-width: 400px) {
+
+            &_rightBlock {
+                width: 100%;
+                transition: all ease 1500ms;
+
+            }
+
+            .none {
+
+                width: 0px;
+            }
+
+        }
     }
+    .menuHeader{
+        display: none !important;
+    }
+    @media (max-width: 895px){
+        &_content{
+            &_top{
+                display: none;
+            }
+        }
+    }
+}
+.menuBlock {
+    position: relative;
+    
+
+    &_icon {
+        display: none !important;
+        margin-left: 40px;
+        cursor: pointer;
+
+        @media (max-width: 1500px) {
+            display: block !important;
+
+        }
+    }
+    &_parent{
+        position: absolute;
+        top: 35px;
+        left: 0px;
+        border-radius: 25px;
+        background-color: #1d2836;
+        color: aliceblue;
+        z-index: 2000;
+        padding: 10px 50px;
+        height: max-content;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+           
+        }
+        h3,p{
+            text-align: center;
+            padding: 2px 8px;
+            cursor: pointer;
+            border-radius: 8px;
+            &:hover{
+                background-color:#16191C;
+            }
+            
+        }
+        .dosk{
+            display: flex;
+
+            p {
+                background-color: #dfe1e6;
+                color: #16191c;
+                padding: 3px px;
+                line-height: 180%;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+        }
+    }
+    @media (min-width: 1500px) {
+        display: none ;
+
+    }
+
+
+}
+.noneBlock {
+    height: 0;
+    transition: all 500s ease;
+    div{
+        display: none;
+
+    }
+
+}
+
+
+.listIcon{
+    display: none !important;
+    @media (max-width: 1100px) {
+        cursor: pointer;
+        margin-right: 25px;
+        display: block !important;
+
+    }
+}   
+
+.menuBlockRight {
+    position: relative;
+    display: flex;
+    
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (min-width: 1100px) {
+        display: none ;
+
+    }
+
+}
+.noneBlockRight {
+    height: 0;
+    transition: all 500s ease;
+    div{
+        display: none;
+
+    }
+
 }

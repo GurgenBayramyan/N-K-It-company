@@ -8,13 +8,13 @@ import Person3Icon from "@mui/icons-material/Person3";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 import MenuIcon from "@mui/icons-material/Menu";
-import { IHeaderState} from "./header";
+import ClearAllIcon from '@mui/icons-material/ClearAll';
+import { IHeaderState} from "./HeaderTypes";
 export default function Header() {
     const[headerState,setHeaderState] = useState<IHeaderState>({
         open:false
     })
     const handleOpenMenu = () => {
-        console.log(headerState.open)
         setHeaderState({...headerState,open:!headerState.open})
     }
   return (
@@ -70,6 +70,12 @@ export default function Header() {
         <div className={style.header_navbar_search}>
           <span>Создать</span>
         </div>
+        <div className={style.iconsBlock} >
+          <NotificationsIcon className={style.id} sx={{ cursor: "pointer" }} />
+          <ContactSupportIcon className={style.id} sx={{ cursor: "pointer" }} />
+          <DisplaySettingsIcon className={style.id} sx={{ cursor: "pointer" }} />
+          <Person3Icon className={style.id}  sx={{ cursor: "pointer" }} />
+        </div>
       </div>
       <div className={style.header_search_block}>
         <div className={style.header_search_block_inputBlock}>
@@ -82,7 +88,9 @@ export default function Header() {
           <DisplaySettingsIcon sx={{ cursor: "pointer" }} />
           <Person3Icon sx={{ cursor: "pointer" }} />
         </div>
+       
       </div>
+      <ClearAllIcon className={style.menuHeader} />
     </header>
   );
 }

@@ -22,11 +22,14 @@
         z-index: 2000;
         gap: 10px;
         padding: 50px 0;
+        
         .header_navbar_textBlock{
             cursor: pointer;
         }
         transition: 400ms ease;
+        
     }
+   
     &_menuBlockClose{
         width: 0;
         height: 0;
@@ -39,6 +42,8 @@
         .header_navbar_search{
             display: none;
         }
+        
+       
     }
     &_navbar {
         display: flex;
@@ -140,5 +145,36 @@
         }
         
     }
+    @media (max-width: 895px) {
+        
+        .header_search_block_userBlock{
+            display: none;
+        }
+
+        .header_menuBlock{
+            .iconsBlock{
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+        }
+        
+        
+        
+    }
    
+}
+.iconsBlock{
+    display: none !important;
+}
+
+.menuHeader{
+    display: none !important;
+}
+@media (max-width: 895px){
+    .menuHeader{
+        display: block !important;
+        cursor: pointer;
+    }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import MyInput from "../component/formRegistration/MyInput";
-import Button from "../component/buttonSubmit/Button";
 import style from "./Login.module.scss";
+import Button from "../component/buttonSubmit/Button";
 export default function Login() {
   return (
     <>
@@ -10,7 +10,7 @@ export default function Login() {
         <form>
           <MyInput placholder="email" />
           <MyInput placholder="password" />
-          <Button name="logIn" />
+          <Button name="login"></Button>
         </form>
       </div>
     </>
