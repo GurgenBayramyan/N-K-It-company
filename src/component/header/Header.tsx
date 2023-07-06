@@ -9,16 +9,23 @@ import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearAllIcon from '@mui/icons-material/ClearAll';
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
+
 import { IHeaderState} from "./HeaderTypes";
 export default function Header() {
     const[headerState,setHeaderState] = useState<IHeaderState>({
-        open:false
+        open:false,
+        menuView:false
     })
     const handleOpenMenu = () => {
         setHeaderState({...headerState,open:!headerState.open})
     }
-  return (
-    <header className={style.header}>
+    const handleViewMenu = () => {
+      setHeaderState({...headerState,menuView:!headerState.menuView})
+    }
+  return <header className={style.header}>
       <div className={style.header_navbar}>
         <div className={style.header_navbar_buttonBlock}>
           <AppsIcon sx={{ cursor: "pointer" }} />
@@ -70,11 +77,11 @@ export default function Header() {
         <div className={style.header_navbar_search}>
           <span>Создать</span>
         </div>
-        <div className={style.iconsBlock} >
+        <div className={style.iconsBlock}>
           <NotificationsIcon className={style.id} sx={{ cursor: "pointer" }} />
           <ContactSupportIcon className={style.id} sx={{ cursor: "pointer" }} />
           <DisplaySettingsIcon className={style.id} sx={{ cursor: "pointer" }} />
-          <Person3Icon className={style.id}  sx={{ cursor: "pointer" }} />
+          <Person3Icon className={style.id} sx={{ cursor: "pointer" }} />
         </div>
       </div>
       <div className={style.header_search_block}>
@@ -88,9 +95,42 @@ export default function Header() {
           <DisplaySettingsIcon sx={{ cursor: "pointer" }} />
           <Person3Icon sx={{ cursor: "pointer" }} />
         </div>
-       
       </div>
-      <ClearAllIcon className={style.menuHeader} />
-    </header>
-  );
+      <ClearAllIcon onClick={handleViewMenu} className={style.menuHeader} />
+      <div className={`${headerState.menuView && style.k7} ${!headerState.menuView && style.k6} `}>
+        <h3>Tasks</h3>
+        <p>Для рабочего пространства</p>
+        <div className={style.dosk}>
+          <p>По доске</p>
+          <KeyboardArrowDownIcon className={style.img} />
+        </div>
+        <div className={style.text}>
+              <RocketLaunchIcon
+                className={style.logo}
+                sx={{ cursor: "pointer" }}
+              />
+              <p>Улучшения</p>
+            </div>
+            <div className={style.text}>
+              <ElectricBoltIcon
+                className={style.logo}
+                sx={{ cursor: "pointer" }}
+              />
+              <p>Автоматизация</p>
+            </div>
+            <div className={style.text}>
+              <FilterListIcon
+                className={style.logo}
+                sx={{ cursor: "pointer" }}
+              />
+              <p>Фильтр</p>
+            </div>
+            <div className={style.text}>
+              <p>Поделиться</p>
+            </div>
+            <div className={style.text}>
+              <span>...</span>
+            </div>
+      </div>
+    </header>;
 }

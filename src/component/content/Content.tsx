@@ -16,8 +16,8 @@ import { IState } from "./ContentTypes";
 export default function Content() {
   const [clasNameObj, setClasName] = useState<IState>({
     open: true,
-    menu: false,
-    menuRight: false,
+    menu: true,
+    menuRight: true,
   });
   const handleClose = () => {
     setClasName({ ...clasNameObj, open: !clasNameObj.open });

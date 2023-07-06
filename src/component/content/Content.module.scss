@@ -216,6 +216,7 @@
                         }
                     }
                 }
+           
             }
 
             &_leftBlock {
@@ -258,7 +259,7 @@
     }
 
     &_rightBlockClose {
-        width: 1%;
+        width: 10px;
         height: 100vh;
         border-right: 1px solid seashell;
         background-color: #16191C;
@@ -285,7 +286,9 @@
                 }
             }
         }
+       
     }
+ 
 
     @media (max-width: 1280px) {
         &_content {
@@ -367,13 +370,12 @@
         }
 
         @media (max-width: 400px) {
-
+            
             &_rightBlock {
                 width: 100%;
                 transition: all ease 1500ms;
 
             }
-
             .none {
 
                 width: 0px;
@@ -386,6 +388,7 @@
     }
     @media (max-width: 895px){
         &_content{
+            
             &_top{
                 display: none;
             }
@@ -500,3 +503,19 @@
     }
 
 }
+@media (max-width: 895px){
+    .listIcon{
+        display: none !important;
+    }
+    .menuBlock_icon{
+        display: none !important;
+    }
+  
+}
+
+@media (max-width: 700px){
+    .main_rightBlock{
+        width: 100%;
+    }
+}
+
