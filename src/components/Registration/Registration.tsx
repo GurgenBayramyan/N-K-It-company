@@ -1,8 +1,8 @@
 import React from 'react'
-import style from './FormRegistration.module.scss'
-import MyInput from './MyInput'
-import Button from '../buttonSubmit/Button'
-export default function FormRegistration() {
+import style from './Registration.module.scss'
+import MyInput from '../Input/Input'
+import Button from '../Button'
+const  Registration =() => {
   return (
     <div className={style.form}>
         <form >
@@ -23,3 +23,4 @@ export default function FormRegistration() {
     </div>
   )
 }
+export default Registration

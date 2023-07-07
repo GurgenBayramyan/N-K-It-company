@@ -12,9 +12,8 @@ import ClearAllIcon from '@mui/icons-material/ClearAll';
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
-
-import { IHeaderState} from "./HeaderTypes";
-export default function Header() {
+import { IHeaderState} from './HeaderTypes';
+const  Header = () => {
     const[headerState,setHeaderState] = useState<IHeaderState>({
         open:false,
         menuView:false
@@ -134,3 +133,4 @@ export default function Header() {
       </div>
     </header>;
 }
+export default Header

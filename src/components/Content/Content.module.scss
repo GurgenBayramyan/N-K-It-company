@@ -1,0 +1,154 @@
+.content{
+    display: flex;
+    .leftContainer{
+        width: 300px;
+        background-color: #2C2322;
+        height: 100vh;
+        display: flex;
+        transition: all 500ms ease;
+        flex-direction: column;
+        .numbers{
+            display: flex;
+            color: wheat;
+            font-weight: 800;
+            padding: 8px;
+            .first{
+                padding: 5px 10px;
+                background-color: #BE5496;
+                span{
+                    font-size: 20px;
+                }
+                
+            }
+            .last{
+                padding: 8px;
+            }
+        }
+        &_top{
+            height: 55px;
+            border-bottom: 1px solid #4D4746;
+            position: relative;
+            
+        }
+        &_down{
+            flex: 1;
+        }
+    }
+    .close{
+        width: 25px;
+        .numbers{
+            display: none;
+        }
+    }
+  
+  
+    .openBlock{
+        position: absolute;
+        top: 15px;
+        right: -15px;
+        color: wheat;
+        padding: 4px;
+        &:hover{
+            background-color: #837f97;
+        }
+    }
+    .closeblock{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: wheat;
+        padding: 4px;
+        border-radius: 14px 14px;
+    
+        &:hover{
+            background-color: #837f97;
+        }
+    }
+    .rightContainer{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: url("https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg");
+        background-size: cover;
+        overflow-x: scroll;
+        .topSec{
+            display: flex;
+            justify-content: space-between;
+            height: 55px;
+            background-color: rgb(54, 48, 44);
+        }
+        
+    }
+}
+
+
+.leftBlock{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 550px;
+    padding: 10px 50px;
+    color:white;
+    h3{
+        cursor: pointer;
+    }
+    .starIcon{
+        cursor: pointer;
+        padding: 2px;
+        &:hover{
+            transform: scale(1.2);
+            background-color: #4D4746;
+            color: sandybrown;
+        }
+    }
+    .textBlock{
+        display: flex;
+        gap: 15px;
+        padding: 1px 25px;
+        border-radius: 7px;
+        cursor: pointer;
+        span{
+            align-self: center;
+        }
+        &:hover{
+            background-color: #4D4746;
+        }
+    }
+    .board{
+        padding: 2px 8px;
+        cursor: pointer;
+        display: flex;
+        gap:5px ;
+        span{
+            margin: 5px;
+        }
+        .rowDown{
+            padding-top: 2px;
+            border-radius: 5px;
+            &:hover{
+                background-color: #4D4746;;
+            }
+        }
+    }
+}
+
+.rightBlock{
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+    color: white;
+    .text{
+        display: flex;
+        align-self: center;
+        gap: 8px;
+        padding: 1px 20px;
+        border-radius: 8px;
+        cursor: pointer;    
+        p{
+            align-self: center;
+        }
+        &:hover{
+            background-color: #4D4746;
+        }
+    }
+}
