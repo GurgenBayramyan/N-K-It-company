@@ -119,15 +119,17 @@
         cursor: pointer;
         display: flex;
         gap:5px ;
+        background-color: rgba(240, 248, 255, 0.956);
+        &:hover{
+            background-color: rgb(240, 248, 255);
+        }
+        color: black;
         span{
             margin: 5px;
         }
         .rowDown{
             padding-top: 2px;
             border-radius: 5px;
-            &:hover{
-                background-color: #4D4746;;
-            }
         }
     }
 }
