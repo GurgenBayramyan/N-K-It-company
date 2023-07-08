@@ -20,6 +20,7 @@ const  Header = () => {
     })
     const handleOpenMenu = () => {
         setHeaderState({...headerState,open:!headerState.open})
+        
     }
     const handleViewMenu = () => {
       setHeaderState({...headerState,menuView:!headerState.menuView})
